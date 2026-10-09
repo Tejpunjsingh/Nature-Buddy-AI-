@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#214f3c">
+  <meta name="description" content="A small nudge toward a bigger world. Plan gentle outdoor adventures, notice more, and keep a private nature journal — offline-first.">
+  <title>NatureBuddy — Find your outside</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="NatureBuddy home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 3.5C12 3.4 6 5.1 4 10.7c-1.3 3.7 1.1 6.7 4.5 6.1 6.2-1.1 9.7-6.5 12-13.3Z"/><path d="M3 21c3.4-6.1 7.2-9.2 12.6-12"/></svg></span>
+      <span><span class="brand-name">naturebuddy</span><span class="brand-tag">A little more outside</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#planner">Make a plan</a>
+      <a href="#discover">Find an idea</a>
+      <a href="#notebook">Field notes</a>
+    </nav>
+    <div class="top-actions">
+      <div class="status-pill" title="Your notes and plans stay in this browser. The model is optional."><span class="status-dot"></span><span id="modeStatus">Offline-friendly</span></div>
+      <button class="icon-button" id="helpButton" aria-label="About NatureBuddy" title="About NatureBuddy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2-2.4 3.6M12 17h.01"/></svg></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="spark">✳</span> Your pocket-sized nature companion</div>
+        <h1 id="heroTitle">The outdoors<br>is <em>calling.</em></h1>
+        <p>Trade one more scroll for one small discovery. Get a gentle plan, step outside at your own pace, and notice what’s been here all along.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#planner">Plan a little adventure <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="#discover">I need an idea</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="An illustrated view of rolling green hills, trees, and a setting sun" role="img">
+        <div class="sun"></div><div class="ridge ridge-back"></div><div class="ridge ridge-mid"></div><div class="ridge ridge-front"></div>
+        <div class="tree t1"></div><div class="tree t2"></div><div class="tree t3"></div>
+        <div class="hero-note">Fresh air, no rush<br>your pace is perfect</div>
+        <div class="art-label"><span>🌿</span><span>Notice something<br>you've never noticed</span></div>
+      </div>
+    </section>
+
+    <section id="planner" aria-labelledby="plannerTitle">
+      <div class="intro-row">
+        <div><div class="section-kicker">01 / Make it happen</div><h2 class="section-title" id="plannerTitle">A tiny plan. A real-world day.</h2><p class="section-subtitle">Tell us what you feel like doing. We’ll keep it easy, flexible, and close to nature.</p></div>
+        <a class="text-link" href="#notebook">Keep a field note <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="planner-layout">
+        <form class="panel planner-panel" id="plannerForm">
+          <div class="panel-heading"><div class="panel-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-4.4 7-11a7 7 0 0 0-14 0c0 6.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.3"/></svg></div><div><h3>Build your outside moment</h3><p>No gear, no pressure. Just a little curiosity.</p></div></div>
+          <label class="field-label">What sounds good today?</label>
+          <div class="activity-grid" id="activityGrid">
+            <button type="button" class="activity-option" data-activity="Mindful walk" aria-pressed="true"><span class="activity-emoji">🚶</span><span>Mindful walk</span></button>
+            <button type="button" class="activity-option" data-activity="Birdwatching" aria-pressed="false"><span class="activity-emoji">🐦</span><span>Birdwatching</span></button>
+            <button type="button" class="activity-option" data-activity="Garden time" aria-pressed="false"><span class="activity-emoji">🌱</span><span>Garden time</span></button>
+            <button type="button" class="activity-option" data-activity="Nature photography" aria-pressed="false"><span class="activity-emoji">📷</span><span>Nature photos</span></button>
+            <button type="button" class="activity-option" data-activity="Cloud watching" aria-pressed="false"><span class="activity-emoji">☁️</span><span>Cloud watching</span></button>
+            <button type="button" class="activity-option" data-activity="Outdoor reset" aria-pressed="false"><span class="activity-emoji">🍃</span><span>Outdoor reset</span></button>
+          </div>
+          <div class="form-row">
+            <div class="select-wrap"><label for="place">Your setting</label><select id="place"><option value="A nearby park or public green space">A nearby park</option><option value="A garden, courtyard, or balcony">Garden or balcony</option><option value="A familiar neighbourhood street">Neighbourhood</option><option value="A safe, familiar trail">A familiar trail</option><option value="A window or outdoor doorstep">Window or doorstep</option></select></div>
+            <div class="select-wrap"><label for="duration">Time you have</label><select id="duration"><option value="10">10 minutes</option><option value="20" selected>20 minutes</option><option value="30">30 minutes</option><option value="45">45 minutes</option></select></div>
+          </div>
+          <label class="field-label">Pick a vibe</label>
+          <div class="focus-options" role="radiogroup" aria-label="Choose a vibe">
+            <label class="focus-option"><input type="radio" name="focus" value="Calm" checked><span>🫧 Calm</span></label>
+            <label class="focus-option"><input type="radio" name="focus" value="Curious"><span>🔎 Curious</span></label>
+            <label class="focus-option"><input type="radio" name="focus" value="Playful"><span>✨ Playful</span></label>
+            <label class="focus-option"><input type="radio" name="focus" value="Move a little"><span>👟 Move a little</span></label>
+          </div>
+          <div class="generate-row"><button class="btn btn-primary" type="submit" id="generateButton">Make my tiny adventure <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.7L20 11l-6.2 2.3L12 20l-1.8-6.7L4 11l6.2-2.3L12 3Z"/></svg></button><span class="microcopy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Your choices stay on this device.</span></div>
+        </form>
+
+        <section class="panel plan-panel" id="planPanel" aria-live="polite" aria-labelledby="guideTitle">
+          <div id="emptyPlan" class="empty-plan"><div class="empty-illustration">🌤️</div><h3>Your next little adventure</h3><p>Make a plan and we’ll turn a spare moment into an easy outdoor mission.</p></div>
+          <div id="planContent" class="hidden">
+            <div class="plan-top"><div class="plan-topline"><div class="plan-label"><span></span><span id="planBadge">YOUR FIELD GUIDE</span></div><span class="plan-time" id="planTime">20 MINUTES</span></div><h3 id="guideTitle">A gentler kind of wandering</h3><p id="planMission">Take the long breath. Let your eyes adjust. There’s no finish line here.</p></div>
+            <div class="plan-body"><h4>Your small steps</h4><ol class="steps" id="planSteps"></ol><div class="observe-box"><div class="observe-heading"><span>👀</span> LITTLE THINGS TO NOTICE</div><div class="observe-list" id="observeList"></div></div></div>
+            <div class="plan-footer"><span class="plan-origin" id="planOrigin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7v5l3 2"/></svg> On-device starter guide</span><div class="plan-actions"><button class="small-btn" id="copyPlan">Copy</button><button class="small-btn" id="savePlan">Save plan</button><button class="small-btn" id="markDone">Done outside</button></div></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="discover" class="discover-section" aria-labelledby="discoverTitle">
+      <div class="intro-row"><div><div class="section-kicker">02 / Follow your curiosity</div><h2 class="section-title" id="discoverTitle">A few paths to wonder.</h2><p class="section-subtitle">Small, screen-light ideas for the time and space you have.</p></div><div class="discover-toolbar"><label class="search-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4 4"/></svg><input id="ideaSearch" type="search" placeholder="Find an idea…" aria-label="Search outdoor ideas"></label></div></div>
+      <div class="filter-row" id="ideaFilters" aria-label="Filter ideas"><button class="filter-chip" data-filter="All" aria-pressed="true">Everything</button><button class="filter-chip" data-filter="Slow down" aria-pressed="false">Slow down</button><button class="filter-chip" data-filter="Look closer" aria-pressed="false">Look closer</button><button class="filter-chip" data-filter="Get moving" aria-pressed="false">Get moving</button><button class="filter-chip" data-filter="Grow things" aria-pressed="false">Grow things</button></div>
+      <div class="idea-grid" id="ideaGrid">
+        <article class="idea-card" data-category="Slow down" data-search="sound walk mindful walk listen calm">
+          <div class="idea-visual walk"><span>🌳</span><div class="idea-tag">Slow down</div></div><div class="idea-content"><h3>The sound map</h3><p>Pause somewhere safe and map the sounds around you, from closest to farthest.</p><div class="idea-bottom"><span class="idea-duration">10–15 min</span><button class="idea-use" data-idea="Mindful walk" data-duration="10">Try this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div></div>
+        </article>
+        <article class="idea-card" data-category="Look closer" data-search="birdwatching bird call nature listen birds">
+          <div class="idea-visual bird"><span>🐦</span><div class="idea-tag">Look closer</div></div><div class="idea-content"><h3>Birds, not names</h3><p>Notice movement, shape, and sound. You don’t need to identify a single bird.</p><div class="idea-bottom"><span class="idea-duration">15–20 min</span><button class="idea-use" data-idea="Birdwatching" data-duration="20">Try this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div></div>
+        </article>
+        <article class="idea-card" data-category="Grow things" data-search="gardening garden leaves plant water growing">
+          <div class="idea-visual garden"><span>🪴</span><div class="idea-tag">Grow things</div></div><div class="idea-content"><h3>One plant, full attention</h3><p>Check a plant’s leaves, soil, and new growth before doing anything else.</p><div class="idea-bottom"><span class="idea-duration">10 min</span><button class="idea-use" data-idea="Garden time" data-duration="10">Try this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div></div>
+        </article>
+        <article class="idea-card" data-category="Slow down" data-search="cloud watching sky clouds shapes mindful">
+          <div class="idea-visual sky"><span>☁️</span><div class="idea-tag">Slow down</div></div><div class="idea-content"><h3>Cloud postcards</h3><p>Find a safe place to look at the sky. Give a passing cloud a made-up name.</p><div class="idea-bottom"><span class="idea-duration">5–10 min</span><button class="idea-use" data-idea="Cloud watching" data-duration="10">Try this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6-6-6 6"/></svg></button></div></div>
+        </article>
+        <article class="idea-card" data-category="Look closer" data-search="nature photography textures colors details camera">
+          <div class="idea-visual photo"><span>📷</span><div class="idea-tag">Look closer</div></div><div class="idea-content"><h3>Texture hunt</h3><p>Find three different textures nearby: smooth, rough, soft, or patterned.</p><div class="idea-bottom"><span class="idea-duration">10–20 min</span><button class="idea-use" data-idea="Nature photography" data-duration="20">Try this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6-6-6 6"/></svg></button></div></div>
+        </article>
+        <article class="idea-card" data-category="Get moving" data-search="walk movement outdoors park green space stretch">
+          <div class="idea-visual park"><span>👟</span><div class="idea-tag">Get moving</div></div><div class="idea-content"><h3>The familiar loop</h3><p>Take an easy route you know and spot one thing you’ve never noticed before.</p><div class="idea-bottom"><span class="idea-duration">15–30 min</span><button class="idea-use" data-idea="Outdoor reset" data-duration="20">Try this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6-6-6 6"/></svg></button></div></div>
+        </article>
+        <article class="idea-card" data-category="Get moving" data-search="walk senses notice colors shapes sky trees">
+          <div class="idea-visual walk"><span>🍃</span><div class="idea-tag">Get moving</div></div><div class="idea-content"><h3>Five shades of green</h3><p>Look for different greens around you, from deep shadows to new leaves.</p><div class="idea-bottom"><span class="idea-duration">10 min</span><button class="idea-use" data-idea="Mindful walk" data-duration="10">Try this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6-6-6 6"/></svg></button></div></div>
+        </article>
+        <article class="idea-card" data-category="Look closer" data-search="nature pattern leaf bark stone observe">
+          <div class="idea-visual garden"><span>🔎</span><div class="idea-tag">Look closer</div></div><div class="idea-content"><h3>Nature’s patterns</h3><p>Find a repeating shape in a leaf, tree bark, a stone, or a patch of light.</p><div class="idea-bottom"><span class="idea-duration">5–15 min</span><button class="idea-use" data-idea="Nature photography" data-duration="10">Try this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6-6-6 6"/></svg></button></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="notebook" class="notebook-section" aria-labelledby="notebookTitle">
+      <div class="intro-row"><div><div class="section-kicker">03 / Keep what you notice</div><h2 class="section-title" id="notebookTitle">Your little field notebook.</h2><p class="section-subtitle">A place for the tiny things you might otherwise forget. Stored only in this browser.</p></div><button class="text-link" type="button" id="exportNotes">Export notes ↗</button></div>
+      <div class="notebook-layout">
+        <form class="note-compose" id="noteForm">
+          <div class="panel-heading"><div class="panel-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div><div><h3>Capture a small moment</h3><p>It doesn’t need to be impressive to be worth remembering.</p></div></div>
+          <label class="field-label" for="noteTitle">Give your note a title</label><input id="noteTitle" type="text" maxlength="70" placeholder="e.g. A very determined ant" required>
+          <label class="field-label" for="noteText">What did you notice?</label><textarea id="noteText" maxlength="800" placeholder="A sound, a smell, a feeling, a tiny detail…" required></textarea>
+          <button class="btn btn-primary" type="submit">Save to my notebook <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="privacy-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Private by default · no account · no cloud sync</div>
+        </form>
+        <div class="panel notes-panel"><div class="notes-header"><h3>Recent field notes</h3><span class="notes-count" id="notesCount">0 NOTES</span></div><div class="notes-list" id="notesList"><div class="notes-empty"><span>📓</span>Your notebook is waiting for its first little discovery.<br>Save a note after your next outside moment.</div></div></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="footer-inner"><div class="footer-brand"><span>🌱</span> A little more outside.</div><div>Made for noticing, not endless scrolling. No tracking. No account.</div><div id="sessionLabel">Your outside moments: 0</div></div></footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="modal-backdrop" id="helpModal" role="dialog" aria-modal="true" aria-labelledby="helpTitle"><div class="modal"><h3 id="helpTitle">A note about NatureBuddy 🌿</h3><p>NatureBuddy is designed to make the screen the shortest part of an outdoor adventure. Activity ideas, plans, and your field notes work locally. If you run Ollama on your own machine, the site can optionally ask your local open-weight model for a more tailored plan. No hosted AI API is needed.</p><p><strong>Take care outside:</strong> use familiar public places, check conditions yourself, respect plants and wildlife, and put your phone away while moving. Plans are ideas, not live local safety or weather information.</p><div class="modal-actions"><button type="button" class="small-btn" id="closeHelp">Got it</button></div></div></div>
+<script src="app.js" defer></script>
+</body>
+</html>

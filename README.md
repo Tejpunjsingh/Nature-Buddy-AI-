@@ -1,4 +1,3 @@
-# Nature-Buddy-AI-
 # NatureBuddy AI — Find your outside 🌿
 
 An attractive, offline-first outdoor companion built with HTML, CSS, and vanilla JavaScript. It helps people trade a little screen time for real-world nature experiences.

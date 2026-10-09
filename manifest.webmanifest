@@ -1,0 +1,13 @@
+{
+  "name": "NatureBuddy — Find your outside",
+  "short_name": "NatureBuddy",
+  "description": "Offline-first outdoor activity planner and private nature notebook.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f8f1",
+  "theme_color": "#214f3c",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
